@@ -130,9 +130,48 @@ list2
 
 
 
+##Coercing Data Types i.e converting data type from one data structure to another
 
+# COERCING TYPES ###########################################
 
+## Automatic Coercion ======================================
 
+# Goes to "least restrictive" data type
 
+(coerce1 <- c(1, "b", TRUE))
+typeof(coerce1)
 
+## Coerce Numeric to Integer ===============================
 
+(coerce2 <- 5)
+typeof(coerce2)
+
+##to store value as integer
+(coerce3 <- as.integer(5))
+typeof(coerce3)
+
+## Coerce Character to Numeric =============================
+
+(coerce4 <- c("1", "2", "3"))
+typeof(coerce4)
+
+(coerce5 <- as.numeric(c("1", "2", "3")))
+typeof(coerce5)
+
+## Coerce Matrix to Data Frame =============================
+
+(coerce6 <- matrix(1:9, nrow= 3))
+is.matrix(coerce6)
+
+(coerce7 <- as.data.frame(matrix(1:9, nrow= 3)))
+is.data.frame(coerce7)
+
+# CLEAN UP #################################################
+
+# Clear environment
+rm(list = ls()) 
+
+# Clear console
+cat("\014")  # ctrl+L
+
+# Clear mind :)
